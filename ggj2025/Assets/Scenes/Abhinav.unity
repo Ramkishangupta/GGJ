@@ -1266,7 +1266,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 1898369119}
   maxLaunchSpeed: 20
   launchSpeedIncreaseRate: 5
-  maxHoldTime: 3
+  maxHoldTime: 1
   gravityScale: 1
   numberOfPoints: 20
   isJumping: 0
