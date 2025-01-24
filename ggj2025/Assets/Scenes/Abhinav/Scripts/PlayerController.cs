@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
 	{
 		// Handle player movement
 		float moveInput = Input.GetAxis("Horizontal");
-		rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+		rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
 		// Rotate gun to face mouse position
 		RotateGunToMouse();
