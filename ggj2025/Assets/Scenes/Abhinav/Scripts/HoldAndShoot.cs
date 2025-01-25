@@ -43,7 +43,7 @@ public class HoldAndShoot : MonoBehaviour
 			initialPosition = transform.position;
 		}
 		// Handle mouse button input
-		if (Input.GetMouseButton(0) && isJumping == false)
+		if (Input.GetMouseButton(0))
 		{
 			HandleHold();
 			lineRenderer.enabled = true;
@@ -60,7 +60,7 @@ public class HoldAndShoot : MonoBehaviour
 		RotateObjectToCursor();
 
 		// Automatically launch if max hold time is reached
-		if (isHolding && holdTime >= maxHoldTime && isJumping == false)
+		if (isHolding && holdTime >= maxHoldTime)
 		{
 			LaunchProjectile();
 			DestroyPrefabWithEffect();
