@@ -147,6 +147,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -559,7 +572,25 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ass-lvl-2_0: -2747197300791795224
+      ass-lvl-2_1: 584589559345794779
+      ass-lvl-2_10: 7544587121418202504
+      ass-lvl-2_11: -5236870304940427646
+      ass-lvl-2_12: 7135281847350758042
+      ass-lvl-2_13: -8795819778475637947
+      ass-lvl-2_14: -6667248870655408535
+      ass-lvl-2_15: -6314295610572474758
+      ass-lvl-2_16: -2738276206556489672
+      ass-lvl-2_17: -1498624141546026441
+      ass-lvl-2_2: 1883084004151485072
+      ass-lvl-2_3: -3153932266954055233
+      ass-lvl-2_4: 4223871720497644976
+      ass-lvl-2_5: 7387839859424745144
+      ass-lvl-2_6: 2743314286642176463
+      ass-lvl-2_7: 2080122575181790254
+      ass-lvl-2_8: -1837214236331307545
+      ass-lvl-2_9: 7641049237610117026
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
