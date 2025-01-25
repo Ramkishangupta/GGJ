@@ -30,9 +30,9 @@ public class HoldAndShoot : MonoBehaviour
 
 	public LayerMask groundLayer; // Ground layer to check if player is grounded
 
-	// Cooldown variables
-	public float spawnCooldown = 1f; // Time between spawns (in seconds)
-	private float lastSpawnTime = 0f; // Time of the last spawn
+	// Anti-spamming mechanism variables (Cooldown for the next launch)
+	public float cooldownTime = 0.5f; // Time the player needs to wait before attempting the next launch
+	private float nextLaunchTime = 0f; // Time the player can attempt the next launch
 
 	private void Update()
 	{
@@ -54,7 +54,7 @@ public class HoldAndShoot : MonoBehaviour
 		}
 
 		// Handle left mouse button input for shooting
-		if (Input.GetMouseButton(0))
+		if (Input.GetMouseButton(0) && Time.time >= nextLaunchTime) // Check if cooldown has passed
 		{
 			if (!isTrajectoryCanceled) // Only handle left-click if trajectory is not canceled
 			{
@@ -110,18 +110,11 @@ public class HoldAndShoot : MonoBehaviour
 			currentLaunchSpeed = 0f; // Reset launch speed
 			initialPosition = transform.position; // Store the initial position of the player
 
-			// Check cooldown before spawning the prefab
-			if (Time.time - lastSpawnTime >= spawnCooldown)
+			// Spawn the prefab at the specified position (balloon)
+			if (spawnedPrefab == null && prefab != null)
 			{
-				// Spawn the prefab at the specified position (balloon)
-				if (spawnedPrefab == null && prefab != null)
-				{
-					spawnedPrefab = Instantiate(prefab, prefabSpawnPosition.position, Quaternion.identity, transform); // Attach to player
-					spawnedPrefab.transform.localScale = Vector3.zero; // Start at zero size
-
-					// Update the last spawn time
-					lastSpawnTime = Time.time;
-				}
+				spawnedPrefab = Instantiate(prefab, prefabSpawnPosition.position, Quaternion.identity, transform); // Attach to player
+				spawnedPrefab.transform.localScale = Vector3.zero; // Start at zero size
 			}
 		}
 
@@ -171,7 +164,7 @@ public class HoldAndShoot : MonoBehaviour
 			// Destroy the prefab
 			Destroy(spawnedPrefab);
 
-			// Spawn particle effect at prefab's position
+			// Spawn particle effect at prefab's position (bubble burst)
 			if (particleEffect != null)
 			{
 				Instantiate(particleEffect, prefabSpawnPosition.position, Quaternion.identity);
@@ -183,6 +176,9 @@ public class HoldAndShoot : MonoBehaviour
 	{
 		if (isHolding)
 		{
+			// Reset the velocity before applying the new force
+			rb.linearVelocity = Vector2.zero; // Set velocity to zero to ignore existing force
+
 			// Apply force in the calculated launch direction with the current speed
 			rb.AddForce(launchDirection * currentLaunchSpeed, ForceMode2D.Impulse);
 
@@ -193,6 +189,9 @@ public class HoldAndShoot : MonoBehaviour
 
 		// Reset trajectory cancel state once launched
 		isTrajectoryCanceled = false;
+
+		// Set the time for the next possible launch (cooldown time)
+		nextLaunchTime = Time.time + cooldownTime;
 	}
 
 	private void DrawTrajectory()
