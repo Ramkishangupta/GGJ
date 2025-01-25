@@ -29,26 +29,31 @@ public class HoldAndShoot : MonoBehaviour
 	public GameObject particleEffect; // Particle effect to spawn after destroying the prefab
 	private GameObject spawnedPrefab; // Reference to the spawned prefab (balloon)
 
-	public LayerMask groundLayer; // Ground layer to check if player is grounded
+	[Header("Movement")]
+	public float movSpeed = 5f;
+	public bool isGrounded = false;
 
 	// Anti-spamming mechanism variables (Cooldown for the next launch)
 	public float cooldownTime = 0.5f; // Time the player needs to wait before attempting the next launch
 	private float nextLaunchTime = 0f; // Time the player can attempt the next launch
 
-	[Header("Movement")]
-	public float movSpeed = 5f;
-	public bool isGrounded = false;
+	private FuelManager fuelManager; // Reference to the FuelManager script
+
+	private void Start()
+	{
+		fuelManager = GetComponent<FuelManager>(); // Get the FuelManager script
+	}
+
 	private void Update()
 	{
-
 		float hor = Input.GetAxisRaw("Horizontal");
-		float ver = Input.GetAxisRaw("Vertical");
 
-		if(isGrounded == true)
+		// Handle movement when grounded
+		if (isGrounded)
 		{
-			transform.position += new Vector3(hor * movSpeed * Time.deltaTime, ver * movSpeed * Time.deltaTime, 0f);
-
+			transform.position += new Vector3(hor * movSpeed * Time.deltaTime, 0f, 0f);
 		}
+
 		// Update the player's jumping state
 		if (rb.linearVelocity.y == 0)
 		{
@@ -134,9 +139,14 @@ public class HoldAndShoot : MonoBehaviour
 		// Check if Shift is held down to use minLaunchSpeedIncreaseRate
 		float speedIncreaseRate = Input.GetKey(KeyCode.LeftShift) ? minLaunchSpeedIncreaseRate : launchSpeedIncreaseRate;
 
-		// Update hold time and launch speed
+		// Update hold time
 		holdTime += Time.deltaTime;
-		currentLaunchSpeed = Mathf.Min(holdTime * speedIncreaseRate, maxLaunchSpeed); // Use correct speed increase rate
+
+		// Get the max allowed launch speed based on fuel
+		float maxAllowedLaunchSpeed = fuelManager.GetMaxAllowedLaunchSpeed(maxLaunchSpeed);
+
+		// Cap the current launch speed based on maxAllowedLaunchSpeed
+		currentLaunchSpeed = Mathf.Min(holdTime * speedIncreaseRate, maxAllowedLaunchSpeed);
 
 		// Calculate the launch direction based on the cursor position
 		Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -154,7 +164,6 @@ public class HoldAndShoot : MonoBehaviour
 		}
 	}
 
-	// Cancel the trajectory when the right-click is pressed
 	private void CancelTrajectory()
 	{
 		if (!isTrajectoryCanceled && holdTime >= cooldownTime)
@@ -197,6 +206,9 @@ public class HoldAndShoot : MonoBehaviour
 
 			// Apply force in the calculated launch direction with the current speed
 			rb.AddForce(launchDirection * currentLaunchSpeed, ForceMode2D.Impulse);
+
+			// Consume fuel based on the actual launch speed
+			fuelManager.ConsumeFuel(currentLaunchSpeed, maxLaunchSpeed);
 
 			// Reset holding state
 			isHolding = false;
@@ -246,10 +258,9 @@ public class HoldAndShoot : MonoBehaviour
 
 		// Calculate the angle in degrees and set the rotation of the rotating object
 		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-		rotatingObject.rotation = Quaternion.Euler(0f, 0f, angle + 180);
+		rotatingObject.rotation = Quaternion.Euler(0f, 0f, angle);
 	}
 
-	// Ensure the balloon stays at the correct spawn position relative to the player
 	private void UpdateBubblePosition()
 	{
 		if (spawnedPrefab != null)
@@ -259,16 +270,11 @@ public class HoldAndShoot : MonoBehaviour
 		}
 	}
 
-	// Ground detection using Raycast to determine if the player is grounded
-	private bool IsGrounded()
-	{
-		// Cast a ray downward from the player's position to check for ground collision
-		return Physics2D.Raycast(transform.position, Vector2.down, 0.2f, groundLayer);
-	}
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
 		isGrounded = true;
 	}
+
 	private void OnCollisionExit2D(Collision2D collision)
 	{
 		isGrounded = false;
