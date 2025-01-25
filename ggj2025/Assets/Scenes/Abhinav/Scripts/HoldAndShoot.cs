@@ -96,6 +96,7 @@ public class HoldAndShoot : MonoBehaviour
 			DrawTrajectory();
 		}
 
+		
 		// Make sure the spawned bubble stays at the correct position relative to the player
 		UpdateBubblePosition();
 	}
