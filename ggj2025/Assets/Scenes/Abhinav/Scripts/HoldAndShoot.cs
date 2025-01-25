@@ -6,7 +6,8 @@ public class HoldAndShoot : MonoBehaviour
 	public LineRenderer lineRenderer; // LineRenderer for trajectory visualization
 
 	public float maxLaunchSpeed = 20f; // Maximum speed the object can reach
-	public float launchSpeedIncreaseRate = 5f; // Rate at which speed increases per second
+	public float launchSpeedIncreaseRate = 5f; // Rate at which speed increases per second (normal condition)
+	public float minLaunchSpeedIncreaseRate = 2f; // Rate at which speed increases per second (when Shift is held)
 	public float maxHoldTime = 3f; // Maximum time the mouse button can be held
 	public float gravityScale = 1f; // Optional gravity scale for trajectory
 	public int numberOfPoints = 20; // Number of points to render the trajectory
@@ -34,8 +35,20 @@ public class HoldAndShoot : MonoBehaviour
 	public float cooldownTime = 0.5f; // Time the player needs to wait before attempting the next launch
 	private float nextLaunchTime = 0f; // Time the player can attempt the next launch
 
+	[Header("Movement")]
+	public float movSpeed = 5f;
+	public bool isGrounded = false;
 	private void Update()
 	{
+
+		float hor = Input.GetAxisRaw("Horizontal");
+		float ver = Input.GetAxisRaw("Vertical");
+
+		if(isGrounded == true)
+		{
+			transform.position += new Vector3(hor * movSpeed * Time.deltaTime, ver * movSpeed * Time.deltaTime, 0f);
+
+		}
 		// Update the player's jumping state
 		if (rb.linearVelocity.y == 0)
 		{
@@ -47,8 +60,8 @@ public class HoldAndShoot : MonoBehaviour
 			isJumping = true;
 		}
 
-		// Handle right-click input to cancel the trajectory
-		if (Input.GetMouseButton(1)) // Right-click cancels trajectory
+		// Handle right-click input to cancel the trajectory (Only if hold time > cooldown time)
+		if (Input.GetMouseButton(1) && holdTime >= cooldownTime) // Right-click cancels trajectory if enough time passed
 		{
 			CancelTrajectory();
 		}
@@ -96,7 +109,6 @@ public class HoldAndShoot : MonoBehaviour
 			DrawTrajectory();
 		}
 
-		
 		// Make sure the spawned bubble stays at the correct position relative to the player
 		UpdateBubblePosition();
 	}
@@ -119,9 +131,12 @@ public class HoldAndShoot : MonoBehaviour
 			}
 		}
 
+		// Check if Shift is held down to use minLaunchSpeedIncreaseRate
+		float speedIncreaseRate = Input.GetKey(KeyCode.LeftShift) ? minLaunchSpeedIncreaseRate : launchSpeedIncreaseRate;
+
 		// Update hold time and launch speed
 		holdTime += Time.deltaTime;
-		currentLaunchSpeed = Mathf.Min(holdTime * launchSpeedIncreaseRate, maxLaunchSpeed);
+		currentLaunchSpeed = Mathf.Min(holdTime * speedIncreaseRate, maxLaunchSpeed); // Use correct speed increase rate
 
 		// Calculate the launch direction based on the cursor position
 		Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -142,7 +157,7 @@ public class HoldAndShoot : MonoBehaviour
 	// Cancel the trajectory when the right-click is pressed
 	private void CancelTrajectory()
 	{
-		if (!isTrajectoryCanceled)
+		if (!isTrajectoryCanceled && holdTime >= cooldownTime)
 		{
 			isTrajectoryCanceled = true; // Set the trajectory cancel state
 			isHolding = false; // Reset the holding state
@@ -249,5 +264,13 @@ public class HoldAndShoot : MonoBehaviour
 	{
 		// Cast a ray downward from the player's position to check for ground collision
 		return Physics2D.Raycast(transform.position, Vector2.down, 0.2f, groundLayer);
+	}
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		isGrounded = true;
+	}
+	private void OnCollisionExit2D(Collision2D collision)
+	{
+		isGrounded = false;
 	}
 }
