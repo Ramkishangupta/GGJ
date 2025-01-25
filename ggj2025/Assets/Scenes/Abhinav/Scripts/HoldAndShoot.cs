@@ -18,6 +18,15 @@ public class HoldAndShoot : MonoBehaviour
 
 	private bool isHolding = false; // Whether the mouse is being held
 	public bool isJumping = false;
+
+	public Transform rotatingObject; // The object that will rotate toward the cursor
+
+	[Header("Prefab and Effects")]
+	public GameObject prefab; // The prefab to spawn
+	public Transform prefabSpawnPosition; // The position where the prefab will spawn
+	public GameObject particleEffect; // Particle effect to spawn after destroying the prefab
+	private GameObject spawnedPrefab; // Reference to the spawned prefab
+
 	private void Update()
 	{
 		if (rb.linearVelocity.y == 0)
@@ -32,19 +41,35 @@ public class HoldAndShoot : MonoBehaviour
 		if (Input.GetMouseButton(1) && rb.linearVelocity.y == 0)
 		{
 			initialPosition = transform.position;
-
 		}
-
-
 		// Handle mouse button input
-		if (Input.GetMouseButton(0))
+		if (Input.GetMouseButton(0) && isJumping == false)
 		{
 			HandleHold();
+			lineRenderer.enabled = true;
+
+			// Spawn and grow the prefab
+			HandlePrefabGrowth();
+		}
+		else
+		{
+			lineRenderer.enabled = false;
+		}
+
+		// Rotate the rotating object toward the cursor
+		RotateObjectToCursor();
+
+		// Automatically launch if max hold time is reached
+		if (isHolding && holdTime >= maxHoldTime && isJumping == false)
+		{
+			LaunchProjectile();
+			DestroyPrefabWithEffect();
 		}
 
 		if (Input.GetMouseButtonUp(0))
 		{
 			LaunchProjectile();
+			DestroyPrefabWithEffect();
 		}
 
 		// Draw the trajectory while holding the mouse button
@@ -63,6 +88,13 @@ public class HoldAndShoot : MonoBehaviour
 			holdTime = 0f; // Reset hold time
 			currentLaunchSpeed = 0f; // Reset launch speed
 			initialPosition = transform.position; // Store the initial position
+
+			// Spawn the prefab at the specified position
+			if (spawnedPrefab == null && prefab != null)
+			{
+				spawnedPrefab = Instantiate(prefab, prefabSpawnPosition.position, Quaternion.identity);
+				spawnedPrefab.transform.localScale = Vector3.zero; // Start at zero size
+			}
 		}
 
 		// Update hold time and launch speed
@@ -73,9 +105,31 @@ public class HoldAndShoot : MonoBehaviour
 		Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		cursorPosition.z = 0f; // Ignore z-axis
 		launchDirection = (transform.position - cursorPosition).normalized; // Opposite to cursor
+	}
 
-		// Update launch angle dynamically for trajectory visualization
-		float launchAngle = Mathf.Atan2(launchDirection.y, launchDirection.x) * Mathf.Rad2Deg;
+	private void HandlePrefabGrowth()
+	{
+		if (spawnedPrefab != null)
+		{
+			// Calculate the scale factor based on hold time
+			float scaleFactor = Mathf.Min(holdTime / maxHoldTime, 1f); // Clamp between 0 and 1
+			spawnedPrefab.transform.localScale = Vector3.one * scaleFactor; // Scale uniformly
+		}
+	}
+
+	private void DestroyPrefabWithEffect()
+	{
+		if (spawnedPrefab != null)
+		{
+			// Destroy the prefab
+			Destroy(spawnedPrefab);
+
+			// Spawn particle effect at prefab's position
+			if (particleEffect != null)
+			{
+				Instantiate(particleEffect, prefabSpawnPosition.position, Quaternion.identity);
+			}
+		}
 	}
 
 	private void LaunchProjectile()
@@ -87,6 +141,7 @@ public class HoldAndShoot : MonoBehaviour
 
 			// Reset holding state
 			isHolding = false;
+			holdTime = 0f; // Reset hold time for the next launch
 		}
 	}
 
@@ -112,5 +167,19 @@ public class HoldAndShoot : MonoBehaviour
 		// Set the LineRenderer's positions to the trajectory points
 		lineRenderer.positionCount = points.Length;
 		lineRenderer.SetPositions(points);
+	}
+
+	private void RotateObjectToCursor()
+	{
+		// Get the cursor position in world space
+		Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		cursorPosition.z = 0f; // Ignore the z-axis
+
+		// Calculate the direction from the rotating object to the cursor
+		Vector2 direction = cursorPosition - rotatingObject.position;
+
+		// Calculate the angle in degrees and set the rotation of the rotating object
+		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+		rotatingObject.rotation = Quaternion.Euler(0f, 0f, angle + 180);
 	}
 }
