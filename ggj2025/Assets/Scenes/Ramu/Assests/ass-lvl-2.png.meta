@@ -1,64 +1,61 @@
 fileFormatVersion: 2
-guid: 80fe0d4e7e49f7144b6feba395b0a060
+guid: e95f9adc5f97e5c4b907c275f85f99f4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2768652342228818722
-    second: construction-site-assests_0
+      213: -2747197300791795224
+    second: ass-lvl-2_0
   - first:
-      213: 5541316306403008272
-    second: construction-site-assests_1
+      213: 584589559345794779
+    second: ass-lvl-2_1
   - first:
-      213: 5656172709922106990
-    second: construction-site-assests_2
+      213: 1883084004151485072
+    second: ass-lvl-2_2
   - first:
-      213: 3158802678510592771
-    second: construction-site-assests_3
+      213: -3153932266954055233
+    second: ass-lvl-2_3
   - first:
-      213: 6733597262812687801
-    second: construction-site-assests_4
+      213: 4223871720497644976
+    second: ass-lvl-2_4
   - first:
-      213: -6382682303341178229
-    second: construction-site-assests_5
+      213: 7387839859424745144
+    second: ass-lvl-2_5
   - first:
-      213: 4485977106198019301
-    second: construction-site-assests_6
+      213: 2743314286642176463
+    second: ass-lvl-2_6
   - first:
-      213: -5584050337806578234
-    second: construction-site-assests_7
+      213: 2080122575181790254
+    second: ass-lvl-2_7
   - first:
-      213: 5946060990636788982
-    second: construction-site-assests_8
+      213: -1837214236331307545
+    second: ass-lvl-2_8
   - first:
-      213: 1612234023234502655
-    second: construction-site-assests_9
+      213: 7641049237610117026
+    second: ass-lvl-2_9
   - first:
-      213: 7544688790440117536
-    second: construction-site-assests_10
+      213: 7544587121418202504
+    second: ass-lvl-2_10
   - first:
-      213: -3837020665132688099
-    second: construction-site-assests_11
+      213: -5236870304940427646
+    second: ass-lvl-2_11
   - first:
-      213: 5535982864234072970
-    second: construction-site-assests_12
+      213: 7135281847350758042
+    second: ass-lvl-2_12
   - first:
-      213: -7985232150324992137
-    second: construction-site-assests_13
+      213: -8795819778475637947
+    second: ass-lvl-2_13
   - first:
-      213: -6910975919909312367
-    second: construction-site-assests_14
+      213: -6667248870655408535
+    second: ass-lvl-2_14
   - first:
-      213: -8529900222718066868
-    second: construction-site-assests_15
+      213: -6314295610572474758
+    second: ass-lvl-2_15
   - first:
-      213: 6989431590574167980
-    second: construction-site-assests_16
+      213: -2738276206556489672
+    second: ass-lvl-2_16
   - first:
-      213: 3847001757017503266
-    second: construction-site-assests_17
-  - first:
-      213: 5546411319593201208
-    second: construction-site-assests_18
+      213: -1498624141546026441
+    second: ass-lvl-2_17
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -154,13 +151,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: construction-site-assests_0
+      name: ass-lvl-2_0
       rect:
         serializedVersion: 2
-        x: 2242
-        y: 3743
-        width: 722
-        height: 2627
+        x: 816
+        y: 4279
+        width: 523
+        height: 2278
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 22b1a15e2aa3c6620800000000000000
-      internalID: 2768652342228818722
+      spriteID: 8e1a4663c9effd9d0800000000000000
+      internalID: -2747197300791795224
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: construction-site-assests_1
+      name: ass-lvl-2_1
       rect:
         serializedVersion: 2
-        x: 4831
-        y: 3705
-        width: 1345
-        height: 2170
+        x: 1646
+        y: 4279
+        width: 666
+        height: 1672
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,20 +188,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 01f1b3f42d5b6ec40800000000000000
-      internalID: 5541316306403008272
+      spriteID: bde45306b11ec1800800000000000000
+      internalID: 584589559345794779
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: construction-site-assests_2
+      name: ass-lvl-2_2
       rect:
         serializedVersion: 2
-        x: 6488
-        y: 3720
-        width: 710
-        height: 1550
+        x: 2452
+        y: 4276
+        width: 1215
+        height: 1508
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,20 +210,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e6e6a2bac13ce7e40800000000000000
-      internalID: 5656172709922106990
+      spriteID: 0926badbcee022a10800000000000000
+      internalID: 1883084004151485072
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: construction-site-assests_3
+      name: ass-lvl-2_3
       rect:
         serializedVersion: 2
-        x: 7195
-        y: 3627
-        width: 485
-        height: 1301
+        x: 4116
+        y: 4279
+        width: 506
+        height: 1111
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,20 +232,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3032d20dc4256db20800000000000000
-      internalID: 3158802678510592771
+      spriteID: fb1af8e305bfa34d0800000000000000
+      internalID: -3153932266954055233
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: construction-site-assests_4
+      name: ass-lvl-2_4
       rect:
         serializedVersion: 2
-        x: 7864
-        y: 3770
-        width: 965
-        height: 1565
+        x: 5393
+        y: 4620
+        width: 2883
+        height: 3323
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,152 +254,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9bd2e7ec80b827d50800000000000000
-      internalID: 6733597262812687801
+      spriteID: 0b5841563f43e9a30800000000000000
+      internalID: 4223871720497644976
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: construction-site-assests_5
-      rect:
-        serializedVersion: 2
-        x: 9616
-        y: 3716
-        width: 1514
-        height: 2105
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b825d2313482c67a0800000000000000
-      internalID: -6382682303341178229
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: construction-site-assests_6
-      rect:
-        serializedVersion: 2
-        x: 12149
-        y: 3693
-        width: 387
-        height: 1937
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5ecb77d0964614e30800000000000000
-      internalID: 4485977106198019301
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: construction-site-assests_7
-      rect:
-        serializedVersion: 2
-        x: 12967
-        y: 3644
-        width: 407
-        height: 1101
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6cd8327adc77182b0800000000000000
-      internalID: -5584050337806578234
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: construction-site-assests_8
-      rect:
-        serializedVersion: 2
-        x: 13804
-        y: 3426
-        width: 356
-        height: 1383
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6fc86b7a7f6a48250800000000000000
-      internalID: 5946060990636788982
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: construction-site-assests_9
-      rect:
-        serializedVersion: 2
-        x: 14418
-        y: 3763
-        width: 471
-        height: 2365
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ffff0b95d4ecf5610800000000000000
-      internalID: 1612234023234502655
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: construction-site-assests_10
-      rect:
-        serializedVersion: 2
-        x: 3251
-        y: 3528
-        width: 7452
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0250e0f3b7e14b860800000000000000
-      internalID: 7544688790440117536
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: construction-site-assests_11
+      name: ass-lvl-2_5
       rect:
         serializedVersion: 2
         x: 0
-        y: 307
-        width: 560
-        height: 1959
+        y: 850
+        width: 1266
+        height: 1792
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -411,20 +276,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d1ddee2d80a20cac0800000000000000
-      internalID: -3837020665132688099
+      spriteID: 8b6db7ea531e68660800000000000000
+      internalID: 7387839859424745144
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: construction-site-assests_12
+      name: ass-lvl-2_6
       rect:
         serializedVersion: 2
-        x: 894
-        y: 325
-        width: 1186
-        height: 1946
+        x: 1433
+        y: 839
+        width: 653
+        height: 2774
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -433,20 +298,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a8b42598513c3dc40800000000000000
-      internalID: 5535982864234072970
+      spriteID: fc1af8a1fc5321620800000000000000
+      internalID: 2743314286642176463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: construction-site-assests_13
+      name: ass-lvl-2_7
       rect:
         serializedVersion: 2
-        x: 2413
-        y: 167
-        width: 691
-        height: 2358
+        x: 2227
+        y: 839
+        width: 696
+        height: 1986
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -455,20 +320,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 777a9d6baa1ce2190800000000000000
-      internalID: -7985232150324992137
+      spriteID: e2c3bfe06741edc10800000000000000
+      internalID: 2080122575181790254
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: construction-site-assests_14
+      name: ass-lvl-2_8
       rect:
         serializedVersion: 2
-        x: 3579
-        y: 300
-        width: 1358
-        height: 2236
+        x: 2967
+        y: 839
+        width: 468
+        height: 2321
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -477,20 +342,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 198e68a44084710a0800000000000000
-      internalID: -6910975919909312367
+      spriteID: 7ed8e23d267e086e0800000000000000
+      internalID: -1837214236331307545
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: construction-site-assests_15
+      name: ass-lvl-2_9
       rect:
         serializedVersion: 2
-        x: 6074
-        y: 1536
-        width: 1296
-        height: 972
+        x: 3562
+        y: 839
+        width: 398
+        height: 2906
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -499,20 +364,64 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c4f3d57d0f4bf9980800000000000000
-      internalID: -8529900222718066868
+      spriteID: 2a7350f2cc57a0a60800000000000000
+      internalID: 7641049237610117026
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: construction-site-assests_16
+      name: ass-lvl-2_10
       rect:
         serializedVersion: 2
-        x: 7572
+        x: 4981
+        y: 1938
+        width: 2279
+        height: 2628
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88d6e159302c3b860800000000000000
+      internalID: 7544587121418202504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ass-lvl-2_11
+      rect:
+        serializedVersion: 2
+        x: 6737
+        y: 2117
+        width: 4230
+        height: 341
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 286fb3b2436e257b0800000000000000
+      internalID: -5236870304940427646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ass-lvl-2_12
+      rect:
+        serializedVersion: 2
+        x: 4186
         y: 0
-        width: 691
-        height: 2619
+        width: 565
+        height: 1155
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -521,20 +430,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ca7111200037ff060800000000000000
-      internalID: 6989431590574167980
+      spriteID: a9a82ab290d950360800000000000000
+      internalID: 7135281847350758042
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: construction-site-assests_17
+      name: ass-lvl-2_13
       rect:
         serializedVersion: 2
-        x: 9202
-        y: 223
-        width: 642
-        height: 2652
+        x: 4854
+        y: 31
+        width: 520
+        height: 1234
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -543,20 +452,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 226f45937bb436530800000000000000
-      internalID: 3847001757017503266
+      spriteID: 543ca938388fee580800000000000000
+      internalID: -8795819778475637947
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: construction-site-assests_18
+      name: ass-lvl-2_14
       rect:
         serializedVersion: 2
-        x: 5271
-        y: 310
-        width: 1468
-        height: 751
+        x: 5511
+        y: 31
+        width: 955
+        height: 1023
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -565,8 +474,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 83eee8285bfc8fc40800000000000000
-      internalID: 5546411319593201208
+      spriteID: 966c57b0a7c2973a0800000000000000
+      internalID: -6667248870655408535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ass-lvl-2_15
+      rect:
+        serializedVersion: 2
+        x: 6550
+        y: 31
+        width: 440
+        height: 1419
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a76f405c89d1f58a0800000000000000
+      internalID: -6314295610572474758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ass-lvl-2_16
+      rect:
+        serializedVersion: 2
+        x: 7091
+        y: 31
+        width: 565
+        height: 1644
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 838db435c40bff9d0800000000000000
+      internalID: -2738276206556489672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ass-lvl-2_17
+      rect:
+        serializedVersion: 2
+        x: 7744
+        y: 31
+        width: 635
+        height: 1592
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73a03578841d33be0800000000000000
+      internalID: -1498624141546026441
       vertices: []
       indices: 
       edges: []
@@ -584,26 +559,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      construction-site-assests_0: 2768652342228818722
-      construction-site-assests_1: 5541316306403008272
-      construction-site-assests_10: 7544688790440117536
-      construction-site-assests_11: -3837020665132688099
-      construction-site-assests_12: 5535982864234072970
-      construction-site-assests_13: -7985232150324992137
-      construction-site-assests_14: -6910975919909312367
-      construction-site-assests_15: -8529900222718066868
-      construction-site-assests_16: 6989431590574167980
-      construction-site-assests_17: 3847001757017503266
-      construction-site-assests_18: 5546411319593201208
-      construction-site-assests_2: 5656172709922106990
-      construction-site-assests_3: 3158802678510592771
-      construction-site-assests_4: 6733597262812687801
-      construction-site-assests_5: -6382682303341178229
-      construction-site-assests_6: 4485977106198019301
-      construction-site-assests_7: -5584050337806578234
-      construction-site-assests_8: 5946060990636788982
-      construction-site-assests_9: 1612234023234502655
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
