@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6e37ab8b3a908ab43a764611a76a47bb
+guid: a9531b854da61e9428bc2aee43d64dac
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2324927052923493907
-    second: gun-assest_0
+      213: 560592022270115158
+    second: gun 2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gun-assest_0
+      name: gun 2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 68
-        height: 49
+        width: 417
+        height: 299
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: de1acc1d9233cbfd0800000000000000
-      internalID: -2324927052923493907
+      spriteID: 65df35f597f97c700800000000000000
+      internalID: 560592022270115158
       vertices: []
       indices: 
       edges: []
