@@ -17,18 +17,26 @@ public class HoldAndShoot : MonoBehaviour
 	private Vector2 launchDirection; // Direction of the launch
 
 	private bool isHolding = false; // Whether the mouse is being held
+	private bool isTrajectoryCanceled = false; // State to track if the trajectory is canceled
 	public bool isJumping = false;
 
 	public Transform rotatingObject; // The object that will rotate toward the cursor
 
 	[Header("Prefab and Effects")]
-	public GameObject prefab; // The prefab to spawn
+	public GameObject prefab; // The prefab to spawn (balloon)
 	public Transform prefabSpawnPosition; // The position where the prefab will spawn
 	public GameObject particleEffect; // Particle effect to spawn after destroying the prefab
-	private GameObject spawnedPrefab; // Reference to the spawned prefab
+	private GameObject spawnedPrefab; // Reference to the spawned prefab (balloon)
+
+	public LayerMask groundLayer; // Ground layer to check if player is grounded
+
+	// Cooldown variables
+	public float spawnCooldown = 1f; // Time between spawns (in seconds)
+	private float lastSpawnTime = 0f; // Time of the last spawn
 
 	private void Update()
 	{
+		// Update the player's jumping state
 		if (rb.linearVelocity.y == 0)
 		{
 			rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
@@ -38,22 +46,32 @@ public class HoldAndShoot : MonoBehaviour
 		{
 			isJumping = true;
 		}
-		if (Input.GetMouseButton(1) && rb.linearVelocity.y == 0)
+
+		// Handle right-click input to cancel the trajectory
+		if (Input.GetMouseButton(1)) // Right-click cancels trajectory
 		{
-			initialPosition = transform.position;
+			CancelTrajectory();
 		}
-		// Handle mouse button input
+
+		// Handle left mouse button input for shooting
 		if (Input.GetMouseButton(0))
 		{
-			HandleHold();
-			lineRenderer.enabled = true;
+			if (!isTrajectoryCanceled) // Only handle left-click if trajectory is not canceled
+			{
+				HandleHold();
+				// Only enable the LineRenderer if grounded
+				if (!isJumping)
+				{
+					lineRenderer.enabled = true;
+				}
 
-			// Spawn and grow the prefab
-			HandlePrefabGrowth();
+				// Spawn and grow the prefab
+				HandlePrefabGrowth();
+			}
 		}
 		else
 		{
-			lineRenderer.enabled = false;
+			lineRenderer.enabled = false; // Disable LineRenderer when not holding left-click
 		}
 
 		// Rotate the rotating object toward the cursor
@@ -66,7 +84,7 @@ public class HoldAndShoot : MonoBehaviour
 			DestroyPrefabWithEffect();
 		}
 
-		if (Input.GetMouseButtonUp(0))
+		if (Input.GetMouseButtonUp(0)) // Left mouse button released
 		{
 			LaunchProjectile();
 			DestroyPrefabWithEffect();
@@ -77,6 +95,9 @@ public class HoldAndShoot : MonoBehaviour
 		{
 			DrawTrajectory();
 		}
+
+		// Make sure the spawned bubble stays at the correct position relative to the player
+		UpdateBubblePosition();
 	}
 
 	private void HandleHold()
@@ -87,13 +108,20 @@ public class HoldAndShoot : MonoBehaviour
 			isHolding = true;
 			holdTime = 0f; // Reset hold time
 			currentLaunchSpeed = 0f; // Reset launch speed
-			initialPosition = transform.position; // Store the initial position
+			initialPosition = transform.position; // Store the initial position of the player
 
-			// Spawn the prefab at the specified position
-			if (spawnedPrefab == null && prefab != null)
+			// Check cooldown before spawning the prefab
+			if (Time.time - lastSpawnTime >= spawnCooldown)
 			{
-				spawnedPrefab = Instantiate(prefab, prefabSpawnPosition.position, Quaternion.identity);
-				spawnedPrefab.transform.localScale = Vector3.zero; // Start at zero size
+				// Spawn the prefab at the specified position (balloon)
+				if (spawnedPrefab == null && prefab != null)
+				{
+					spawnedPrefab = Instantiate(prefab, prefabSpawnPosition.position, Quaternion.identity, transform); // Attach to player
+					spawnedPrefab.transform.localScale = Vector3.zero; // Start at zero size
+
+					// Update the last spawn time
+					lastSpawnTime = Time.time;
+				}
 			}
 		}
 
@@ -114,6 +142,25 @@ public class HoldAndShoot : MonoBehaviour
 			// Calculate the scale factor based on hold time
 			float scaleFactor = Mathf.Min(holdTime / maxHoldTime, 1f); // Clamp between 0 and 1
 			spawnedPrefab.transform.localScale = Vector3.one * scaleFactor; // Scale uniformly
+		}
+	}
+
+	// Cancel the trajectory when the right-click is pressed
+	private void CancelTrajectory()
+	{
+		if (!isTrajectoryCanceled)
+		{
+			isTrajectoryCanceled = true; // Set the trajectory cancel state
+			isHolding = false; // Reset the holding state
+			holdTime = 0f; // Reset hold time
+			currentLaunchSpeed = 0f; // Reset the launch speed
+			lineRenderer.enabled = false; // Disable the trajectory visualization
+
+			// Destroy the spawned prefab if it exists
+			if (spawnedPrefab != null)
+			{
+				Destroy(spawnedPrefab);
+			}
 		}
 	}
 
@@ -143,6 +190,9 @@ public class HoldAndShoot : MonoBehaviour
 			isHolding = false;
 			holdTime = 0f; // Reset hold time for the next launch
 		}
+
+		// Reset trajectory cancel state once launched
+		isTrajectoryCanceled = false;
 	}
 
 	private void DrawTrajectory()
@@ -160,8 +210,9 @@ public class HoldAndShoot : MonoBehaviour
 			float x = velocity.x * t; // X position based on velocity
 			float y = velocity.y * t - 0.5f * gravityScale * Mathf.Abs(Physics2D.gravity.y) * t * t; // Y position with gravity
 
-			// Add the object's initial position to the trajectory point
-			points[i] = initialPosition + new Vector3(x, y, 0); // Use initial position for the trajectory path
+			// Update the trajectory position based on the player's current position
+			initialPosition = transform.position; // Keep updating initial position to follow the player
+			points[i] = initialPosition + new Vector3(x, y, 0); // Use current position for the trajectory path
 		}
 
 		// Set the LineRenderer's positions to the trajectory points
@@ -181,5 +232,22 @@ public class HoldAndShoot : MonoBehaviour
 		// Calculate the angle in degrees and set the rotation of the rotating object
 		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 		rotatingObject.rotation = Quaternion.Euler(0f, 0f, angle + 180);
+	}
+
+	// Ensure the balloon stays at the correct spawn position relative to the player
+	private void UpdateBubblePosition()
+	{
+		if (spawnedPrefab != null)
+		{
+			// Update the position of the spawned bubble relative to the player's position
+			spawnedPrefab.transform.position = prefabSpawnPosition.position + transform.position - initialPosition;
+		}
+	}
+
+	// Ground detection using Raycast to determine if the player is grounded
+	private bool IsGrounded()
+	{
+		// Cast a ray downward from the player's position to check for ground collision
+		return Physics2D.Raycast(transform.position, Vector2.down, 0.2f, groundLayer);
 	}
 }
