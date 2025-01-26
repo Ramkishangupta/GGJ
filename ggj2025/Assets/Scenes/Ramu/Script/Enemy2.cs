@@ -25,8 +25,8 @@ public class Enemy2 : MonoBehaviour
             Rigidbody rb = bubble.GetComponent<Rigidbody>();
             if (rb != null)
             {
-                rb.velocity = new Vector3(bubbleSpeed, 0f, 0f);
-                Debug.Log("Bubble moving at velocity: " + rb.velocity);
+                rb.linearVelocity = new Vector3(bubbleSpeed, 0f, 0f);
+                Debug.Log("Bubble moving at velocity: " + rb.linearVelocity);
             }
             else
             {

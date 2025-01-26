@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3957674027245598989}
   - component: {fileID: 3842310470161657169}
   m_Layer: 0
-  m_Name: bubble
+  m_Name: bubble big
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 50
-  m_Sprite: {fileID: -9136834448258697486, guid: b7f06ecc9778b5e4ea082229d6396418, type: 3}
+  m_Sprite: {fileID: -9136834448258697486, guid: 7cf577a1f1d723346a6a17d0e7119a96, type: 3}
   m_Color: {r: 0, g: 0.95729876, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

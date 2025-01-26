@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8fc152baad61b8547aa5242d0a6cb216
+guid: e399c7a87bdc5de49a6d334fec5b0170
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8030570891474961867
-    second: splash_0
+      213: -8337692155858296056
+    second: blue-sea-and-sky-background-sea-surface-mountains-on-the-horizon-waves-illustration-vector_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: splash_0
+      name: blue-sea-and-sky-background-sea-surface-mountains-on-the-horizon-waves-illustration-vector_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 354
-        height: 191
+        width: 1920
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 53afa0e625ead8090800000000000000
-      internalID: -8030570891474961867
+      spriteID: 8036183c8219a4c80800000000000000
+      internalID: -8337692155858296056
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      splash_0: -8030570891474961867
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

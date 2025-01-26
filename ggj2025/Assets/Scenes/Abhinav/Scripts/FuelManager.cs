@@ -29,9 +29,15 @@ public class FuelManager : MonoBehaviour
 		}
 	}
 
-	// Public method to consume fuel proportionally to the launch speed
+	// Public method to calculate max allowed launch speed based on remaining fuel
 	public float GetMaxAllowedLaunchSpeed(float maxLaunchSpeed)
 	{
+		if (currentFuel <= 0)
+		{
+			// If out of fuel, allow a minimum launch speed to prevent clamping in only one direction
+			return 0; // Return 0 to prevent launch
+		}
+
 		// Calculate the maximum allowable launch speed based on remaining fuel
 		float maxFuelRatio = currentFuel / maxLaunchFuelCost;
 		return maxLaunchSpeed * Mathf.Min(maxFuelRatio, 1f); // Cap at maxLaunchSpeed
