@@ -38,10 +38,12 @@ public class HoldAndShoot : MonoBehaviour
 	private float nextLaunchTime = 0f; // Time the player can attempt the next launch
 
 	private FuelManager fuelManager; // Reference to the FuelManager script
+	private Animator animator;
 
 	private void Start()
 	{
 		fuelManager = GetComponent<FuelManager>(); // Get the FuelManager script
+		animator = GetComponent<Animator>();
 	}
 
 	private void Update()
@@ -52,6 +54,19 @@ public class HoldAndShoot : MonoBehaviour
 		if (isGrounded)
 		{
 			transform.position += new Vector3(hor * movSpeed * Time.deltaTime, 0f, 0f);
+			if(hor != 0)
+			{
+				animator.enabled = true;
+
+			}
+			else if(hor == 0)
+			{
+				animator.enabled = false;
+			}
+		}
+		else
+		{
+			animator.enabled = false;
 		}
 
 		// Update the player's jumping state

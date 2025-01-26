@@ -21,7 +21,7 @@ public class HealthBar : MonoBehaviour
 	private void Update()
 	{
 		// Regenerate health over time
-		if (currentHealth < maxHealth)
+		if (currentHealth < maxHealth && currentHealth >= 1f)
 		{
 			currentHealth += regenerationRate * Time.deltaTime;
 			currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
@@ -40,7 +40,7 @@ public class HealthBar : MonoBehaviour
 		UpdateHealthUI();
 
 		// Optional: Handle player death if health reaches 0
-		if (currentHealth <= 0)
+		if (currentHealth <= 2)
 		{
 			OnPlayerDeath();
 		}
@@ -64,5 +64,17 @@ public class HealthBar : MonoBehaviour
 	{
 		Debug.Log("Player has died!");
 		// Add death logic here (e.g., disable player movement, play animation, etc.)
+	}
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.CompareTag("enemy"))
+		{
+			TakeDamage(30);
+		}
+		if (collision.CompareTag("death"))
+		{
+			TakeDamage(200);
+		}
 	}
 }
