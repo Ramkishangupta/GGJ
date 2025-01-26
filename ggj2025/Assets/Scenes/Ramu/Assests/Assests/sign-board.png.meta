@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: db63ff5254c46d042a0f2db76a618461
+guid: 4127688a9ff1f1d49aef1a894ccd0071
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4333298627402748568
-    second: BarV8_Bar_0
+      213: 582743647195576502
+    second: sign-board_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BarV8_Bar_0
+      name: sign-board_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 41
         y: 0
-        width: 274
-        height: 25
+        width: 1946
+        height: 3615
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 89257009428f22c30800000000000000
-      internalID: 4333298627402748568
+      spriteID: 6b835367242561800800000000000000
+      internalID: 582743647195576502
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      BarV8_Bar_0: 4333298627402748568
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
