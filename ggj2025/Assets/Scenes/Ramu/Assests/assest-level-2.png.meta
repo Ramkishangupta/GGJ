@@ -1,0 +1,617 @@
+fileFormatVersion: 2
+guid: 9047073bf9371af449141deb3bef2fb8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3624403480159357636
+    second: assest-level-2_0
+  - first:
+      213: -6686702732454263602
+    second: assest-level-2_1
+  - first:
+      213: 8218600887369159960
+    second: assest-level-2_2
+  - first:
+      213: -4853477915515865610
+    second: assest-level-2_3
+  - first:
+      213: 875829581393546358
+    second: assest-level-2_4
+  - first:
+      213: -9115405584418449188
+    second: assest-level-2_5
+  - first:
+      213: -1355637159618412211
+    second: assest-level-2_6
+  - first:
+      213: 6010115310836695629
+    second: assest-level-2_7
+  - first:
+      213: -3526212600456971292
+    second: assest-level-2_8
+  - first:
+      213: -4405538500577759382
+    second: assest-level-2_9
+  - first:
+      213: 2289659967116656192
+    second: assest-level-2_10
+  - first:
+      213: 7249913663947936520
+    second: assest-level-2_11
+  - first:
+      213: -4344206723687775551
+    second: assest-level-2_12
+  - first:
+      213: 5302687132997935225
+    second: assest-level-2_13
+  - first:
+      213: -8350686710091149751
+    second: assest-level-2_14
+  - first:
+      213: -6102052383294040460
+    second: assest-level-2_15
+  - first:
+      213: -8788921020263298134
+    second: assest-level-2_16
+  - first:
+      213: -3554152182364850785
+    second: assest-level-2_17
+  - first:
+      213: 7304571485565982780
+    second: assest-level-2_18
+  - first:
+      213: -3986159840370300106
+    second: assest-level-2_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: assest-level-2_0
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 6395
+        width: 3276
+        height: 1392
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ca869523c77c4230800000000000000
+      internalID: 3624403480159357636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assest-level-2_1
+      rect:
+        serializedVersion: 2
+        x: 3430
+        y: 7576
+        width: 636
+        height: 879
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec40e61ea4f0433a0800000000000000
+      internalID: -6686702732454263602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assest-level-2_2
+      rect:
+        serializedVersion: 2
+        x: 4161
+        y: 6609
+        width: 3255
+        height: 1875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 815595a86f55e0270800000000000000
+      internalID: 8218600887369159960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assest-level-2_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3686
+        width: 2843
+        height: 2668
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f53978fc8bf4acb0800000000000000
+      internalID: -4853477915515865610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assest-level-2_4
+      rect:
+        serializedVersion: 2
+        x: 2828
+        y: 5544
+        width: 443
+        height: 613
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67ccdba2d52972c00800000000000000
+      internalID: 875829581393546358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assest-level-2_5
+      rect:
+        serializedVersion: 2
+        x: 3301
+        y: 2262
+        width: 3989
+        height: 4506
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd8502d9ae29f7180800000000000000
+      internalID: -9115405584418449188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assest-level-2_6
+      rect:
+        serializedVersion: 2
+        x: 7485
+        y: 5964
+        width: 443
+        height: 612
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4100a09f2fcf2de0800000000000000
+      internalID: -1355637159618412211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assest-level-2_7
+      rect:
+        serializedVersion: 2
+        x: 6450
+        y: 5059
+        width: 1613
+        height: 721
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d42ce814808386350800000000000000
+      internalID: 6010115310836695629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assest-level-2_8
+      rect:
+        serializedVersion: 2
+        x: 5614
+        y: 3975
+        width: 1939
+        height: 1047
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4eb71439250601fc0800000000000000
+      internalID: -3526212600456971292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assest-level-2_9
+      rect:
+        serializedVersion: 2
+        x: 5960
+        y: 3519
+        width: 2542
+        height: 1206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6f61c443126cd2c0800000000000000
+      internalID: -4405538500577759382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assest-level-2_10
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 3152
+        width: 293
+        height: 403
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04ebb64eb9186cf10800000000000000
+      internalID: 2289659967116656192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assest-level-2_11
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 2227
+        width: 2696
+        height: 1397
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8031edfc01edc9460800000000000000
+      internalID: 7249913663947936520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assest-level-2_12
+      rect:
+        serializedVersion: 2
+        x: 7522
+        y: 2502
+        width: 628
+        height: 869
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c20abb500746b3c0800000000000000
+      internalID: -4344206723687775551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assest-level-2_13
+      rect:
+        serializedVersion: 2
+        x: 3098
+        y: 2534
+        width: 444
+        height: 613
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97060654adde69940800000000000000
+      internalID: 5302687132997935225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assest-level-2_14
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 1476
+        width: 525
+        height: 725
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94e01765ea66c1c80800000000000000
+      internalID: -8350686710091149751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assest-level-2_15
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 955
+        width: 727
+        height: 1006
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 476deecffa7215ba0800000000000000
+      internalID: -6102052383294040460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assest-level-2_16
+      rect:
+        serializedVersion: 2
+        x: 2312
+        y: 748
+        width: 2808
+        height: 1300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aab0e34d5ea770680800000000000000
+      internalID: -8788921020263298134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assest-level-2_17
+      rect:
+        serializedVersion: 2
+        x: 5312
+        y: 723
+        width: 1369
+        height: 612
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f95b67cbb6d1daec0800000000000000
+      internalID: -3554152182364850785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assest-level-2_18
+      rect:
+        serializedVersion: 2
+        x: 5637
+        y: 373
+        width: 444
+        height: 612
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c389b99901d0f5560800000000000000
+      internalID: 7304571485565982780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assest-level-2_19
+      rect:
+        serializedVersion: 2
+        x: 3484
+        y: 0
+        width: 1705
+        height: 680
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63becc8aeb05ea8c0800000000000000
+      internalID: -3986159840370300106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
