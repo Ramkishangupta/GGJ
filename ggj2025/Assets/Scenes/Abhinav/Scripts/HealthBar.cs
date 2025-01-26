@@ -63,6 +63,8 @@ public class HealthBar : MonoBehaviour
 	private void OnPlayerDeath()
 	{
 		Debug.Log("Player has died!");
+		HoldAndShoot has = GetComponent<HoldAndShoot>();
+		has.enabled = false;
 		// Add death logic here (e.g., disable player movement, play animation, etc.)
 	}
 
@@ -73,6 +75,17 @@ public class HealthBar : MonoBehaviour
 			TakeDamage(30);
 		}
 		if (collision.CompareTag("death"))
+		{
+			TakeDamage(200);
+		}
+		if (collision.CompareTag("ball"))
+		{
+			TakeDamage(80);
+		}
+	}
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.transform.tag == "death")
 		{
 			TakeDamage(200);
 		}
