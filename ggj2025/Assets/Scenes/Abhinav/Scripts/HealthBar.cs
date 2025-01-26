@@ -13,6 +13,7 @@ public class HealthBar : MonoBehaviour
 
 	public Animator animator;
 
+	public GameObject lostpanel;
 	private void Start()
 	{
 		animator = GetComponent<Animator>();
@@ -75,6 +76,8 @@ public class HealthBar : MonoBehaviour
 		Debug.Log("Player has died!");
 		HoldAndShoot has = GetComponent<HoldAndShoot>();
 		has.enabled = false;
+
+		lostpanel.SetActive(true);
 		// Add death logic here (e.g., disable player movement, play animation, etc.)
 	}
 
