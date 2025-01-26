@@ -54,12 +54,11 @@ public class HoldAndShoot : MonoBehaviour
 		if (isGrounded)
 		{
 			transform.position += new Vector3(hor * movSpeed * Time.deltaTime, 0f, 0f);
-			if(hor != 0)
+			if (hor != 0)
 			{
 				animator.enabled = true;
-
 			}
-			else if(hor == 0)
+			else if (hor == 0)
 			{
 				animator.enabled = false;
 			}
@@ -169,6 +168,34 @@ public class HoldAndShoot : MonoBehaviour
 		launchDirection = (transform.position - cursorPosition).normalized; // Opposite to cursor
 	}
 
+	private void LaunchProjectile()
+	{
+		if (isHolding)
+		{
+			// Check fuel level before resetting velocity
+			if (fuelManager.GetFuelPercentage() > 10f) // Only reset velocity if fuel > 10%
+			{
+				rb.linearVelocity = Vector2.zero; // Reset velocity to ignore existing force
+			}
+
+			// Apply force in the calculated launch direction with the current speed
+			rb.AddForce(launchDirection * currentLaunchSpeed, ForceMode2D.Impulse);
+
+			// Consume fuel based on the actual launch speed
+			fuelManager.ConsumeFuel(currentLaunchSpeed, maxLaunchSpeed);
+
+			// Reset holding state
+			isHolding = false;
+			holdTime = 0f; // Reset hold time for the next launch
+		}
+
+		// Reset trajectory cancel state once launched
+		isTrajectoryCanceled = false;
+
+		// Set the time for the next possible launch (cooldown time)
+		nextLaunchTime = Time.time + cooldownTime;
+	}
+
 	private void HandlePrefabGrowth()
 	{
 		if (spawnedPrefab != null)
@@ -210,31 +237,7 @@ public class HoldAndShoot : MonoBehaviour
 				Instantiate(particleEffect, prefabSpawnPosition.position, Quaternion.identity);
 			}
 		}
-	}
-
-	private void LaunchProjectile()
-	{
-		if (isHolding)
-		{
-			// Reset the velocity before applying the new force
-			rb.linearVelocity = Vector2.zero; // Set velocity to zero to ignore existing force
-
-			// Apply force in the calculated launch direction with the current speed
-			rb.AddForce(launchDirection * currentLaunchSpeed, ForceMode2D.Impulse);
-
-			// Consume fuel based on the actual launch speed
-			fuelManager.ConsumeFuel(currentLaunchSpeed, maxLaunchSpeed);
-
-			// Reset holding state
-			isHolding = false;
-			holdTime = 0f; // Reset hold time for the next launch
-		}
-
-		// Reset trajectory cancel state once launched
-		isTrajectoryCanceled = false;
-
-		// Set the time for the next possible launch (cooldown time)
-		nextLaunchTime = Time.time + cooldownTime;
+		AudioManager.Instance.PlaySFX(0);
 	}
 
 	private void DrawTrajectory()
@@ -266,7 +269,7 @@ public class HoldAndShoot : MonoBehaviour
 	{
 		// Get the cursor position in world space
 		Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		cursorPosition.z = 0f; // Ignore the z-axis
+		cursorPosition.z = 0f; // Ignore z-axis
 
 		// Calculate the direction from the rotating object to the cursor
 		Vector2 direction = cursorPosition - rotatingObject.position;

@@ -43,7 +43,7 @@ public class FuelManager : MonoBehaviour
 		return maxLaunchSpeed * Mathf.Min(maxFuelRatio, 1f); // Cap at maxLaunchSpeed
 	}
 
-	// Public method to consume fuel after launching
+	// Public method to consume fuel after launching 
 	public void ConsumeFuel(float launchSpeed, float maxLaunchSpeed)
 	{
 		// Calculate fuel cost based on the actual launch speed
@@ -51,5 +51,11 @@ public class FuelManager : MonoBehaviour
 		currentFuel -= fuelCost;
 		currentFuel = Mathf.Max(0, currentFuel); // Ensure fuel doesn't go below 0
 		fuelSlider.value = currentFuel; // Update slider
+	}
+
+	// Public method to get the current fuel percentage
+	public float GetFuelPercentage()
+	{
+		return (currentFuel / maxFuel) * 100f;
 	}
 }
