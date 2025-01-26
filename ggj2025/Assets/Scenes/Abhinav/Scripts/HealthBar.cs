@@ -11,8 +11,11 @@ public class HealthBar : MonoBehaviour
 	[Header("UI Settings")]
 	public Slider healthSlider; // Reference to the UI slider for health
 
+	public Animator animator;
+
 	private void Start()
 	{
+		animator = GetComponent<Animator>();
 		// Initialize health and update the slider
 		currentHealth = maxHealth;
 		UpdateHealthUI();
@@ -20,6 +23,13 @@ public class HealthBar : MonoBehaviour
 
 	private void Update()
 	{
+		if (Input.GetAxisRaw("Horizontal") !=0)
+		{
+		}
+		else if(Input.GetAxisRaw("Horizontal") == 0)
+		{
+		}
+
 		// Regenerate health over time
 		if (currentHealth < maxHealth && currentHealth >= 1f)
 		{
