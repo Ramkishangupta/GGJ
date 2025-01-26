@@ -29,6 +29,7 @@ public class AudioManager : MonoBehaviour
     }
 
     void Start(){
+        sfxSource = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>();
         PlayBGM(0);
     }
 
@@ -48,6 +49,7 @@ public class AudioManager : MonoBehaviour
     {
         if (index >= 0 && index < sfxClips.Length)
         {
+            if(sfxSource != null || bgmSource != null)
             sfxSource.PlayOneShot(sfxClips[index]);
         }
     }

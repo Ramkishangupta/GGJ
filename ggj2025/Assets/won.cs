@@ -18,13 +18,13 @@ public class won : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene(1);
-    }
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+	}
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if(collision.tag == "Player")
         {
-            panel.SetActive(false);
+            panel.SetActive(true);
         }
 	}
 }

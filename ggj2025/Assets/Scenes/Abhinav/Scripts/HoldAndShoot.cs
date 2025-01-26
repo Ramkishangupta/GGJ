@@ -181,7 +181,8 @@ public class HoldAndShoot : MonoBehaviour
 
 			// Apply force in the calculated launch direction with the current speed
 			rb.AddForce(launchDirection * currentLaunchSpeed, ForceMode2D.Impulse);
-			AudioManager.Instance.PlaySFX(0);
+			AudioSource aas = GetComponent<AudioSource>();
+			aas.Play();
 
 
 			// Consume fuel based on the actual launch speed
