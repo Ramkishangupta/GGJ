@@ -37944,6 +37944,10 @@ PrefabInstance:
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4954039816077559011, guid: ae921f8af4241a64388a258a5f3f169b, type: 3}
+      propertyPath: lostpanel
+      value: 
+      objectReference: {fileID: 833734629}
+    - target: {fileID: 4954039816077559011, guid: ae921f8af4241a64388a258a5f3f169b, type: 3}
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 458380292}
