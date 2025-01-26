@@ -5,7 +5,7 @@ public class MainMenu : MonoBehaviour
 {
     // Name of the scene to load
     [SerializeField]
-    private string gameSceneName = "MainGame";
+    private string gameSceneName = "Abhinav";
 
     // Method to start the game
     public void LoadGameScene()
