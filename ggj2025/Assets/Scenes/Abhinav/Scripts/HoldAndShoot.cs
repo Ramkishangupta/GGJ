@@ -56,16 +56,17 @@ public class HoldAndShoot : MonoBehaviour
 			transform.position += new Vector3(hor * movSpeed * Time.deltaTime, 0f, 0f);
 			if (hor != 0)
 			{
-				animator.enabled = true;
+				animator.SetBool("move", true);
+
 			}
 			else if (hor == 0)
 			{
-				animator.enabled = false;
+				animator.SetBool("move", false);
+
 			}
 		}
 		else
 		{
-			animator.enabled = false;
 		}
 
 		// Update the player's jumping state
