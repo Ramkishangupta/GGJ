@@ -180,6 +180,8 @@ public class HoldAndShoot : MonoBehaviour
 
 			// Apply force in the calculated launch direction with the current speed
 			rb.AddForce(launchDirection * currentLaunchSpeed, ForceMode2D.Impulse);
+			AudioManager.Instance.PlaySFX(0);
+
 
 			// Consume fuel based on the actual launch speed
 			fuelManager.ConsumeFuel(currentLaunchSpeed, maxLaunchSpeed);
@@ -237,7 +239,6 @@ public class HoldAndShoot : MonoBehaviour
 				Instantiate(particleEffect, prefabSpawnPosition.position, Quaternion.identity);
 			}
 		}
-		AudioManager.Instance.PlaySFX(0);
 	}
 
 	private void DrawTrajectory()
