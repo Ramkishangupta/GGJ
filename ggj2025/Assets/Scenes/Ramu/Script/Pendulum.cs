@@ -2,42 +2,30 @@ using UnityEngine;
 
 public class Pendulum : MonoBehaviour
 {
-    // Reference to the base GameObject
-    public Transform baseObject;
+	public Transform pivot; // The pivot point
+	public float oscillationAngle = 45f; // Maximum angle of oscillation
+	public float oscillationSpeed = 2f; // Speed of oscillation
+	public float offsetAngle = 0f; // Offset angle around which the oscillation occurs
 
-    // Amplitude of the oscillation (maximum angle in degrees)
-    public float amplitude = 30f;
+	private float currentAngle; // Current angle of oscillation
 
-    // Speed of the oscillation
-    public float speed = 2f;
+	void Start()
+	{
+		if (pivot == null)
+		{
+			Debug.LogError("Please assign a pivot Transform.");
+		}
+	}
 
-    // Starting offset of the oscillation
-    public float startOffset = 0f;
+	void Update()
+	{
+		if (pivot == null) return;
 
-    private float time;
+		// Calculate the current angle using a sine wave and apply the offset
+		currentAngle = offsetAngle + oscillationAngle * Mathf.Sin(Time.time * oscillationSpeed);
 
-    void Start()
-    {
-        // Initialize the time variable with the offset
-        time = startOffset;
-    }
-
-    void Update()
-    {
-        if (baseObject == null)
-        {
-            Debug.LogWarning("Base object is not assigned!");
-            return;
-        }
-
-        // Calculate the oscillation angle using a sine wave
-        float angle = amplitude * Mathf.Sin(time * speed);
-
-        // Rotate the pendulum around the base's position
-        transform.position = baseObject.position; // Keep the pendulum anchored to the base
-        transform.rotation = Quaternion.Euler(0f, 0f, angle);
-
-        // Increment time
-        time += Time.deltaTime;
-    }
+		// Rotate the object around the pivot
+		transform.position = pivot.position;
+		transform.rotation = Quaternion.Euler(0, 0, currentAngle);
+	}
 }
